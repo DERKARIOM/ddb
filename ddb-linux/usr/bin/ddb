@@ -1,0 +1,5 @@
+#!/bin/bash
+xcmd=$(echo "$1" | cut -d- -f1)
+sudo apt remove "$xcmd"
+sudo dpkg-deb --build "$1"
+sudo apt install ./"$1".deb
